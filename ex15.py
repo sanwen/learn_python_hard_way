@@ -1,4 +1,4 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 # 导入module sys 中的 argv
 from sys import argv
 
@@ -30,10 +30,13 @@ txt.close()
 # 测试写文件txt_again
 txt_again.write("新的内容")
 txt_again.flush()
-# 关闭文件txt_again
-txt_again.close()
 
-print txt_again.read().decode("gbk")
+# 关闭文件txt_again
+# txt_again.close()
+
+# flush后不不关闭文件也可以读出来新写的内容
+txt2 = open(file_name)
+print txt2.read().decode('utf-8', 'ignore')
 
 
 
